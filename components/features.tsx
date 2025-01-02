@@ -44,13 +44,9 @@ export default function Features() {
   return (
     <div className="px-6 py-12 md:py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl mb-6">
+        <h2 className="text-2xl font-bold sm:text-xl lg:text-5xl mb-6">
           Streamline your recruitment with our advanced features
         </h2>
-        <p className="text-lg text-muted-foreground mb-12">
-          Discover how Recruito AI can transform your hiring process with its
-          powerful and innovative features.
-        </p>
       </div>
 
       <div className="space-y-16 max-w-6xl mx-auto">

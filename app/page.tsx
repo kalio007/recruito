@@ -7,13 +7,11 @@ import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import { Navbar } from "@/components/navbar";
 import { Patners } from "@/components/patners";
-import { HeroVideo } from "@/components/video-demo";
 export default function Home() {
   return (
     <div className="">
-      <Navbar className="top-2 border-black" />
+      <Navbar />
       <Hero />
-      <HeroVideo />
       <Patners />
       <Features />
       <BenefitsSection />

@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
   }, [api]);
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-16 bg-white overflow-hidden mb-10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-blue-600 mb-4 block">Testimonials</span>
