@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Accordion,
   AccordionItem,
@@ -5,19 +6,12 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 
-const BackgroundPattern = () => (
-  <div className="absolute inset-0 w-full h-full">
-    <div className="absolute inset-0 bg-dot-black/[0.1]  bg-[size:32px_32px]" />
-    <div className="absolute pointer-events-none inset-0 bg-gradient-to-b from-slate-100 via-transparent to-slate-100" />
-  </div>
-);
-
 export default function FAQSection() {
   const accordionData = [
     {
       title: "What is an AI Agent?",
       content: (
-        <div className="space-y-4 text-gray-600">
+        <div className="space-y-4">
           <p>
             An AI agent is a software system that understands language, learns
             from data, and takes actions automatically to achieve specific
@@ -25,15 +19,14 @@ export default function FAQSection() {
             with candidates, and provide recommendations, all without manual
             oversight. Key capabilities include:
           </p>
-          <ul className="space-y-2 list-none">
+          <ul className="list-disc pl-6 space-y-2">
             {[
               "Natural Language Processing to interpret resumes and candidate responses",
               "Adaptive Learning to improve accuracy and efficiency over time",
               "Task Automation to handle repetitive or time-consuming steps",
               "Data-Driven Insights for better predictions and decisions",
             ].map((item, index) => (
-              <li key={index} className="flex items-start">
-                <span className="mr-2 text-gray-400">-</span>
+              <li key={index} className="text-gray-700">
                 {item}
               </li>
             ))}
@@ -43,27 +36,23 @@ export default function FAQSection() {
     },
     {
       title: "What are the Benefits of Using Recruito's AI Agent?",
-      content: (
-        <p className="text-gray-600">Insert your content for benefits here.</p>
-      ),
+      content: "Insert your content for benefits here.",
     },
     {
       title: "Next Steps?",
-      content: (
-        <p className="text-gray-600">
-          Insert your content for next steps here.
-        </p>
-      ),
+      content: "Insert your content for next steps here.",
     },
   ];
 
   return (
-    <section className="relative min-h-screen py-24 overflow-hidden">
-      <BackgroundPattern />
-
+    <div className="relative min-h-fit w-full py-24 mb-8">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-100 to-white pointer-events-none" />
+      <div className="absolute inset-0 bg-dot-black/[0.1]  bg-[size:20px_20px] p-6" />
+      {/* Content container */}
       <div className="relative container mx-auto px-4 max-w-3xl">
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-sm font-medium text-blue-500 mb-8">
+        <div className="text-center mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-full border border-gray-300 text-sm font-medium text-[#004CD3] mb-4">
             FAQs
           </div>
         </div>
@@ -87,6 +76,6 @@ export default function FAQSection() {
           </Accordion>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

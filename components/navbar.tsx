@@ -3,22 +3,17 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import logo from "../assets/logo.png";
+import Image from "next/image";
 
 export function Navbar() {
   //   const [active, setActive] = useState<string | null>(null);
   return (
     <div className=" fixed w-full px-4 pt-4 z-50">
       <nav className="max-w-6xl mx-auto bg-white/80 backdrop-blur-md rounded-full px-2 py-2 shadow-sm">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-2 py-2">
           <div className="flex items-center gap-2">
-            <img
-              src="/api/placeholder/32/32"
-              alt="Recruito Logo"
-              className="w-8 h-8"
-            />
-            <span className="text-xl font-semibold text-gray-900">
-              Recruito
-            </span>
+            <Image src={logo} alt="Recruito" width={150} height={150} />{" "}
           </div>
 
           <div className="hidden md:flex items-center gap-8">

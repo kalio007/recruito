@@ -81,16 +81,22 @@ export default function HeroVideoDialog({
   return (
     <div className={cn("relative", className)}>
       <div
-        className="group relative cursor-pointer"
+        className=" flex flex-col group relative cursor-pointer px-6 bg-[#CFD8E3]/30 backdrop-blur-md items-center rounded-2xl"
         onClick={() => setIsVideoOpen(true)}
       >
+        <div className="items-center mb-2 p-4">
+          See how we create an autonomous{" "}
+          <span className="underline">AI agent</span>
+        </div>
         <Image
           src={thumbnailSrc}
           alt={thumbnailAlt}
           width={1920}
           height={1080}
-          className="w-full rounded-md border shadow-lg transition-all duration-200 ease-out group-hover:brightness-[0.8]"
+          className="w-full rounded-2xl border  transition-all duration-200 ease-out group-hover:brightness-[0.8]"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white pointer-events-none rounded-2xl" />
+
         <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
           <div className="flex size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md">
             <div
@@ -107,6 +113,7 @@ export default function HeroVideoDialog({
           </div>
         </div>
       </div>
+
       <AnimatePresence>
         {isVideoOpen && (
           <motion.div

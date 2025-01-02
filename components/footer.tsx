@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
@@ -11,7 +11,6 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-4">
           <div className="flex items-center gap-2">
             <Image src={logo} alt="Recruito" width={150} height={150} />
-            {/* <span className="text-gray-900 text-xl">Recruito</span> */}
           </div>
           <div className="ml-4 text-sm text-gray-600">
             © 2024 Recruito AI . All Rights Reserved.

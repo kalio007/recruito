@@ -6,7 +6,7 @@ import Hero_background from "@/assets/hero_background.png";
 
 export default function Hero() {
   return (
-    <section className="pt-40 relative">
+    <section className="pt-60 relative mb-20">
       <div
         className="absolute top-0 left-0 w-full h-3/4 bg-cover"
         style={{

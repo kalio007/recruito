@@ -27,8 +27,11 @@ const BenefitsSection = () => {
     <section className="bg-slate-900 py-16">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-teal-400 text-sm font-medium">Benefits</span>
-          <h2 className="text-white text-4xl font-bold mt-4">
+          <div className="inline-block text-teal-400 text-sm font-medium px-6 py-1.5 rounded-full border border-gray-600 mb-8">
+            Benefits
+          </div>
+
+          <h2 className="text-white text-4xl font-bold">
             Unlock the advantages of using
             <br />
             Recruito AI for your hiring needs.

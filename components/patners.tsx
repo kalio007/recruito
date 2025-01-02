@@ -2,27 +2,26 @@
 
 import Marquee from "@/components/ui/marquee";
 import Image from "next/image";
+import linkedIn from "../assets/LinkedIn.png";
+import ogilvy from "../assets/ogilvy.png";
+import intys from "../assets/Intys.png";
 
 const companies = [
   {
-    name: "GSK",
-    logo: "/path-to-gsk-logo.svg", // Placeholder for GSK logo
-  },
-  {
     name: "Ogilvy",
-    logo: "/path-to-ogilvy-logo.svg", // Placeholder for Ogilvy logo
+    logo: ogilvy,
   },
   {
     name: "Intys",
-    logo: "/path-to-intys-logo.svg", // Placeholder for Intys logo
+    logo: intys,
   },
   {
     name: "LinkedIn",
-    logo: "../assests/linkedin.svg", // Placeholder for LinkedIn logo
+    logo: linkedIn,
   },
 ];
 
-const CompanyLogo = ({ logo, name }: { logo: string; name: string }) => {
+const CompanyLogo = ({ logo, name }: { logo: any; name: string }) => {
   return (
     <div className="mx-16 flex items-center justify-center">
       <Image
@@ -38,7 +37,7 @@ const CompanyLogo = ({ logo, name }: { logo: string; name: string }) => {
 
 export function Patners() {
   return (
-    <div className="mx-40">
+    <div className="mx-40 mt-4">
       <div className="w-full py-12">
         <h2 className="text-center text-sm font-medium mb-12 text-gray-700">
           Trusted By The World Leading Organisations
