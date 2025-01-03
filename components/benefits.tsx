@@ -1,6 +1,8 @@
 import { Cloud, Wand2, BarChart3 } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Hero_background from "@/assets/Gabrun-Hero-BG-5.png";
+import Hero_background2 from "@/assets/Gabrun-Hero-BG-52.png";
+import Image from "next/image";
 
 const BenefitsSection = () => {
   const benefits = [
@@ -26,15 +28,12 @@ const BenefitsSection = () => {
 
   return (
     <section className="relative bg-slate-900 py-16">
-      <div
-        className="absolute top-0 left-0 w-full h-3/4 bg-cover z-2"
-        style={{
-          backgroundImage: `url(${Hero_background.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          zIndex: -1,
-        }}
-      ></div>
+      <div className="absolute bottom-o left-0">
+        <Image src={Hero_background} alt="image" width={500} height={200} />
+      </div>
+      <div className="absolute bottom-o right-0">
+        <Image src={Hero_background2} alt="image" width={500} height={200} />
+      </div>
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <div className="inline-block text-teal-400 text-sm font-medium px-6 py-1.5 rounded-full border border-gray-600 mb-8">

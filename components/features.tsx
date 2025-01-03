@@ -9,6 +9,10 @@ import online from "../assets/online.png";
 import Ryan from "../assets/Ryan.png";
 import Alex from "../assets/Alex.png";
 import Rivera from "../assets/Rivera.png";
+import Sparks from "../assets/Sparks.png";
+import Grid from "../assets/top-grid.png";
+import Lens from "../assets/solar_magnifer-outline.png";
+import Background from "./background";
 
 const DocumentCard = ({ color = "#22c55e" }) => (
   <div className="relative transform transition-all duration-300 hover:-translate-y-1">
@@ -27,7 +31,7 @@ const DocumentCard = ({ color = "#22c55e" }) => (
 );
 
 const CandidateCard = ({ image, name, title, skills, isVerified = false }) => (
-  <div className="w-[240px] bg-white rounded-2xl shadow-md py-4 px-0 relative transform transition-all hover:scale-105">
+  <div className="w-[240px] bg-white border border-[#848EA0]/20  rounded-2xl shadow-md py-4 px-0 relative transform transition-all hover:scale-105">
     <div className="flex flex-col items-center text-center mb-4">
       {isVerified && (
         <div className="absolute left-2 top-2">
@@ -83,9 +87,16 @@ export default function Features() {
   ];
 
   return (
-    <div className="px-6 py-12 md:py-16 lg:py-24 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-8">
+    <div className="relative px-6 py-12 md:py-16 lg:py-24 bg-white">
+      <Background />
+      <div className=" max-w-6xl mx-auto relative">
+        <div className="absolute top-0 right-0">
+          <Image src={Sparks} alt="image" width={50} height={50} />
+        </div>
+        <div className="absolute top-40 left-0">
+          <Image src={Sparks} alt="image" width={50} height={50} />
+        </div>
+        <div className="text-center mb-8 ">
           <div className="inline-block px-4 py-1.5 rounded-full border border-gray-300 text-sm font-medium text-[#004CD3] mb-4">
             Features
           </div>
@@ -95,7 +106,7 @@ export default function Features() {
           our advanced features
         </h2>
 
-        <div className="space-y-8 md:space-y-24">
+        <div className="space-y-8 md:space-y-24 bg-white">
           {/* Feature Grid Container */}
           <div className="grid grid-cols-1 gap-16 md:gap-24">
             {/* Candidate Sourcing Section */}
@@ -111,6 +122,9 @@ export default function Features() {
                 </p>
               </div>
               <div className="relative h-[400px] flex items-center justify-center border-[#848EA0]/20 border rounded-2xl p-4">
+                <div className="absolute top-0 right-0">
+                  <Image src={Grid} alt="image" width={200} height={100} />
+                </div>
                 <div className="flex justify-center items-center gap-2 relative w-full">
                   {candidates.map((candidate, index) => (
                     <div
@@ -132,8 +146,11 @@ export default function Features() {
 
             {/* Resume Screening Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
-              <div className="relative order-2 md:order-1 h-[400px] flex items-center">
-                <div className="w-full  mx-auto md:mx-0 border-[#848EA0]/20 border rounded-2xl p-10">
+              <div className="relative order-2 md:order-1 h-[400px] flex items-center  border-[#848EA0]/20 border rounded-2xl">
+                <div className="absolute bottom-0 right-0">
+                  <Image src={Lens} alt="image" width={200} height={200} />
+                </div>
+                <div className="w-full  mx-auto md:mx-0 p-10">
                   <div className="relative space-y-4 max-w-md">
                     <DocumentCard color="#22c55e" />
                     <DocumentCard color="#eab308" />
@@ -181,7 +198,10 @@ export default function Features() {
             </div>
 
             {/* AI Video Interviews Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
+              <div className="absolute top-0 left-0">
+                <Image src={Grid} alt="image" width={200} height={100} />
+              </div>
               <div className="order-2 md:order-1 h-[400px] flex items-center justify-center relative border-[#848EA0]/20 border rounded-2xl">
                 <Image
                   src={image}
@@ -220,7 +240,10 @@ export default function Features() {
                   make a swift, confident hiring decision.
                 </p>
               </div>
-              <div className="h-[400px] flex items-center border-[#848EA0]/20 border rounded-2xl">
+              <div className="relative h-[400px] flex items-center bg-white border-[#848EA0]/20 border rounded-2xl">
+                <div className="absolute top-0 right-0">
+                  <Image src={Grid} alt="image" width={200} height={100} />
+                </div>
                 <div className="space-y-4 max-w-md mx-auto w-full">
                   {[
                     { name: "Alex Martin", rank: "#1", score: "95%" },
@@ -236,7 +259,7 @@ export default function Features() {
                           height={40}
                           className="rounded-full"
                         />
-                        <div className="w-full bg-white rounded-2xl shadow-xl p-4 flex items-center justify-between relative transform transition-all hover:-translate-y-1 ">
+                        <div className="w-full rounded-2xl shadow-xl p-4 flex items-center justify-between relative transform transition-all hover:-translate-y-1 ">
                           <span className="text-gray-600 text-lg">
                             {candidate.name}
                           </span>
