@@ -76,7 +76,7 @@ const TestimonialsSection = () => {
             <CarouselContent className="-ml-4 gap-3 border-r-4">
               {testimonials.map((testimonial) => (
                 <CarouselItem key={testimonial.id} className="p-4 basis-1/3 ">
-                  <Card className="border-0 shadow-sm p-2  border border-gray-300">
+                  <Card className="border-0 shadow-sm p-2 border-gray-300">
                     <CardContent className="p-2">
                       <div className="flex items-center gap-4 mb-4">
                         <Image

@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+// import type { Configuration } from "webpack";
 
 const nextConfig: NextConfig = {
   webpack(config) {
@@ -29,9 +30,8 @@ const nextConfig: NextConfig = {
     return config;
   },
   images: {
-    domains: ["avatar.vercel.sh"], // Add the required hostname here
+    domains: ["avatar.vercel.sh"],
   },
-  /* config options here */
 };
 
 export default nextConfig;

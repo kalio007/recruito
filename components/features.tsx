@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
 import { CheckCircle2, File } from "lucide-react";
@@ -25,20 +26,8 @@ const DocumentCard = ({ color = "#22c55e" }) => (
   </div>
 );
 
-const CandidateCard = ({
-  image,
-  name,
-  title,
-  skills,
-  isVerified = false,
-}: {
-  image: any;
-  name: string;
-  title: string;
-  skills: string[];
-  isVerified?: boolean;
-}) => (
-  <div className="bg-white rounded-2xl shadow-md p-2 relative transform transition-all hover:scale-105">
+const CandidateCard = ({ image, name, title, skills, isVerified = false }) => (
+  <div className="w-[240px] bg-white rounded-2xl shadow-md py-4 px-0 relative transform transition-all hover:scale-105">
     <div className="flex flex-col items-center text-center mb-4">
       {isVerified && (
         <div className="absolute left-2 top-2">
@@ -96,111 +85,179 @@ export default function Features() {
   return (
     <div className="px-6 py-12 md:py-16 lg:py-24 bg-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-16">
-          Streamline your recruitment with our advanced features
+        <div className="text-center mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-full border border-gray-300 text-sm font-medium text-[#004CD3] mb-4">
+            Features
+          </div>
+        </div>
+        <h2 className="text-5xl font-medium text-center tracking-tight mb-16">
+          Streamline your recruitment with <br />
+          our advanced features
         </h2>
 
-        <div className="space-y-24">
-          {/* Candidate Sourcing Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-5xl font-bold mb-6">
-                Candidate Sourcing & Job Posting
-              </h3>
-              <p className="text-gray-600 text-lg">
-                Recruito automatically posts your position or actively hunts top
-                candidates across multiple platforms. No human intervention
-                needed.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="flex justify-center items-center gap-2 relative">
-                {candidates.map((candidate, index) => (
-                  <div
-                    key={candidate.name}
-                    className={`w-1/2  absolute transition-all duration-300 ${
-                      index === 0
-                        ? "-translate-x-40"
-                        : index === 1
-                        ? "z-10"
-                        : "translate-x-40"
-                    }`}
-                  >
-                    <CandidateCard {...candidate} />
-                  </div>
-                ))}
+        <div className="space-y-8 md:space-y-24">
+          {/* Feature Grid Container */}
+          <div className="grid grid-cols-1 gap-16 md:gap-24">
+            {/* Candidate Sourcing Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
+              <div className="flex flex-col justify-center h-full p-6">
+                <h3 className="text-[44px] md:text-5xl font-medium mb-6">
+                  Candidate Sourcing & Job Posting
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  Recruito automatically posts your position or actively hunts
+                  top candidates across multiple platforms. No human
+                  intervention needed.
+                </p>
               </div>
-            </div>
-          </div>
-
-          {/* Resume Screening Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 md:order-1">
-              <div className="max-w-md mx-auto md:mx-0">
-                <div className="relative space-y-4">
-                  <DocumentCard color="#22c55e" />
-                  <DocumentCard color="#eab308" />
-                  <DocumentCard color="#94a3b8" />
+              <div className="relative h-[400px] flex items-center justify-center border-[#848EA0]/20 border rounded-2xl p-4">
+                <div className="flex justify-center items-center gap-2 relative w-full">
+                  {candidates.map((candidate, index) => (
+                    <div
+                      key={candidate.name}
+                      className={`absolute transition-all duration-300 ${
+                        index === 0
+                          ? "-translate-x-24"
+                          : index === 1
+                          ? "z-10"
+                          : "translate-x-24"
+                      }`}
+                    >
+                      <CandidateCard {...candidate} />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-            <div className="order-1 md:order-2">
-              <h3 className="text-5xl font-bold mb-4">
-                Automated Resume Screening & Filtering
-              </h3>
-              <p className="text-gray-600 mb-8 text-lg">
-                Our AI instantly sorts and prioritizes resumes, highlighting
-                only the strongest matches and discarding unqualified
-                applicants.
-              </p>
-            </div>
-          </div>
 
-          {/* Online Assessment Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-5xl font-bold mb-4">Online Assessment</h3>
-              <p className="text-gray-600 text-lg">
-                Candidates complete a quick skill or behavioral test to validate
-                their capabilities. This process is seamlessly integrated and
-                fully automated.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src={online}
-                alt="Online Assessment"
-                width={500}
-                height={500}
-              />
-            </div>
-          </div>
+            {/* Resume Screening Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
+              <div className="relative order-2 md:order-1 h-[400px] flex items-center">
+                <div className="w-full  mx-auto md:mx-0 border-[#848EA0]/20 border rounded-2xl p-10">
+                  <div className="relative space-y-4 max-w-md">
+                    <DocumentCard color="#22c55e" />
+                    <DocumentCard color="#eab308" />
+                    <DocumentCard color="#94a3b8" />
+                  </div>
+                </div>
+              </div>
 
-          {/* AI Video Interviews Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="order-2 md:order-1">
-              <div className="relative">
+              <div className="order-1 md:order-2 flex flex-col justify-center h-full p-6">
+                <h3 className="text-[44px] md:text-5xl font-medium mb-6">
+                  Automated Resume Screening & Filtering
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  Our AI instantly sorts and prioritizes resumes, highlighting
+                  only the strongest matches and discarding unqualified
+                  applicants.
+                </p>
+              </div>
+            </div>
+
+            {/* Online Assessment Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
+              <div className="flex flex-col justify-center h-full p-6">
+                <h3 className="text-[44px] md:text-5xl font-medium mb-6">
+                  Online Assessment
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  Candidates complete a quick skill or behavioral test to
+                  validate their capabilities. This process is seamlessly
+                  integrated and fully automated.
+                </p>
+              </div>
+              <div className="h-[400px] flex items-center justify-center border-[#848EA0]/20 border rounded-2xl pt-4">
+                <div className="w-full h-full">
+                  <Image
+                    src={online}
+                    alt="Online Assessment"
+                    width={400}
+                    height={400}
+                    className="object-contain"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* AI Video Interviews Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
+              <div className="order-2 md:order-1 h-[400px] flex items-center justify-center relative border-[#848EA0]/20 border rounded-2xl">
                 <Image
                   src={image}
                   alt="Video Interview"
                   width={400}
-                  height={300}
-                  className="rounded-lg"
+                  height={400}
+                  className=" object-contain"
                 />
                 <Image
                   src={interview_overlay}
-                  alt="Cutomer"
-                  className="absolute right-10 top-1/2 -translate-y-1/2 z-10 w-40 "
+                  alt="Customer"
+                  className="absolute right-5 top-1/2 -translate-y-1/2 z-10 w-40"
                 />
               </div>
+              <div className="order-1 md:order-2 flex flex-col justify-center h-full p-6">
+                <h3 className="text-[44px] md:text-5xl font-medium mb-6">
+                  AI Video Interviews
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  An AI-driven virtual interviewer conducts dynamic, adaptive
+                  interviews, capturing both technical insights and soft skills.
+                  Everything is entirely hands-free.
+                </p>
+              </div>
             </div>
-            <div className="order-1 md:order-2">
-              <h3 className="text-5xl font-bold mb-4">AI Video Interviews</h3>
-              <p className="text-gray-600 text-lg">
-                An AI-driven virtual interviewer conducts dynamic, adaptive
-                interviews, capturing both technical insights and soft skills.
-                Everything is entirely hands-free.
-              </p>
+
+            {/* Final Shortlist Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full">
+              <div className="flex flex-col justify-center h-full p-6">
+                <h3 className="text-[44px] md:text-5xl font-medium mb-6">
+                  Final Shortlist for the Line Manager
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  Recruito presents a curated list of the top performers,
+                  complete with interview recordings and evaluations, so you can
+                  make a swift, confident hiring decision.
+                </p>
+              </div>
+              <div className="h-[400px] flex items-center border-[#848EA0]/20 border rounded-2xl">
+                <div className="space-y-4 max-w-md mx-auto w-full">
+                  {[
+                    { name: "Alex Martin", rank: "#1", score: "95%" },
+                    { name: "Emma Rivera", rank: "#2", score: "89%" },
+                    { name: "Ryan Lee", rank: "#3", score: "88%" },
+                  ].map((candidate, index) => (
+                    <div key={candidate.name} className="">
+                      <div className="flex items-center gap-4">
+                        <Image
+                          src={candidates[index].image}
+                          alt={candidate.name}
+                          width={40}
+                          height={40}
+                          className="rounded-full"
+                        />
+                        <div className="w-full bg-white rounded-2xl shadow-xl p-4 flex items-center justify-between relative transform transition-all hover:-translate-y-1 ">
+                          <span className="text-gray-600 text-lg">
+                            {candidate.name}
+                          </span>
+                          <div className="flex items-center gap-4">
+                            <span className="text-gray-500">
+                              {candidate.rank}
+                            </span>
+                            <div className="flex items-center gap-2">
+                              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                <span className="text-sm text-green-600">
+                                  {candidate.score}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
