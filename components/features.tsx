@@ -9,7 +9,7 @@ import online from "../assets/online.png";
 import Ryan from "../assets/Ryan.png";
 import Alex from "../assets/Alex.png";
 import Rivera from "../assets/Rivera.png";
-import Sparks from "../assets/Sparks.png";
+import Sparks from "../assets/sparks.png";
 import Grid from "../assets/top-grid.png";
 import Lens from "../assets/solar_magnifer-outline.png";
 import Background from "./background";
