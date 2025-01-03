@@ -50,51 +50,61 @@ const TestimonialsSection = () => {
   }, [api]);
 
   return (
-    <section className="py-16 bg-white overflow-hidden mb-10">
+    <section className="py-8 md:py-16 bg-white overflow-hidden mb-6 md:mb-10">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="inline-block px-4 py-1.5 mb-12 rounded-full border border-gray-300 text-sm font-medium text-[#004CD3] ">
+        <div className="text-center mb-8 md:mb-12">
+          <div className="inline-block px-3 py-1 md:px-4 md:py-1.5 mb-6 md:mb-12 rounded-full border border-gray-300 text-xs md:text-sm font-medium text-[#004CD3]">
             Testimonials
           </div>
-          <h2 className="text-5xl font-medium tracking-tight mb-4">
-            Don&apos;t just take our word for it—see
-            <br />
-            what our clients say about Recruito AI.
+          <h2 className="text-3xl md:text-5xl font-medium tracking-tight mb-4 px-2">
+            <span className="block md:inline">
+              Don&apos;t just take our word for it—
+            </span>
+            <span className="block md:inline">
+              see what our clients say about Recruito AI.
+            </span>
           </h2>
         </div>
 
         <div className="relative">
           <Carousel
-            setApi={(api: any) => setApi(api)}
+            setApi={setApi}
             opts={{
               align: "center",
               loop: true,
               dragFree: true,
             }}
-            className="w-[150%] -ml-[25%] "
+            className="w-full md:w-[150%] md:-ml-[25%]"
           >
-            <CarouselContent className="-ml-4 gap-3 border-r-4">
+            <CarouselContent className="-ml-4 gap-3">
               {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="p-4 basis-1/3 ">
+                <CarouselItem
+                  key={testimonial.id}
+                  className="p-2 md:p-4 basis-full md:basis-1/3"
+                >
                   <Card className="border-0 shadow-sm p-2 border-gray-300">
                     <CardContent className="p-2">
-                      <div className="flex items-center gap-4 mb-4">
+                      <div className="flex items-center gap-3 md:gap-4 mb-4">
                         <Image
                           src={testimonial.image}
                           alt={testimonial.name}
                           width={40}
                           height={40}
-                          className="w-10 h-10 rounded-full"
+                          className="w-8 h-8 md:w-10 md:h-10 rounded-full"
                         />
                         <div>
-                          <h3 className="font-semibold">{testimonial.name}</h3>
-                          <p className="text-gray-500 text-sm">
+                          <h3 className="font-semibold text-sm md:text-base">
+                            {testimonial.name}
+                          </h3>
+                          <p className="text-gray-500 text-xs md:text-sm">
                             {testimonial.role}
                           </p>
                         </div>
                       </div>
-                      <div className="bg-gray-50 p-4">
-                        <p className="text-gray-700">{testimonial.content}</p>
+                      <div className="bg-gray-50 p-3 md:p-4 rounded-lg">
+                        <p className="text-gray-700 text-sm md:text-base">
+                          {testimonial.content}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
@@ -104,16 +114,16 @@ const TestimonialsSection = () => {
           </Carousel>
         </div>
 
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-2 mt-6 md:mt-8">
           {testimonials.map((_, index) => (
             <button
               key={index}
-              type="button" // Add the type attribute with the value "button"
-              onClick={() => (api as any)?.scrollTo(index as any)} // Add 'as any' to cast 'index' to any type
+              type="button"
+              onClick={() => api?.scrollTo(index)}
               className={`w-2 h-2 rounded-full transition-all ${
-                current === index ? "bg-blue-600 w-8" : "bg-gray-300"
+                current === index ? "bg-blue-600 w-6 md:w-8" : "bg-gray-300"
               }`}
-              title={`Testimonial ${index + 1}`} // Add the title attribute with a descriptive text
+              aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
