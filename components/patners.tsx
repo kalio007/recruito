@@ -3,7 +3,7 @@
 import Marquee from "@/components/ui/marquee";
 import Image from "next/image";
 import linkedIn from "../assets/LinkedIn.png";
-import ogilvy from "../assets/ogilvy.png";
+import ogilvy from "../assets/Ogilvy.png";
 import intys from "../assets/Intys.png";
 
 const companies = [
