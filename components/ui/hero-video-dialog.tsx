@@ -95,7 +95,7 @@ export default function HeroVideoDialog({
             className="object-cover rounded-lg sm:rounded-2xl border transition-all duration-200 ease-out group-hover:brightness-[0.8]"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white pointer-events-none rounded-lg sm:rounded-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/80 pointer-events-none rounded-lg sm:rounded-2xl" />
 
         <div className="absolute inset-0 flex scale-[0.9] items-center justify-center rounded-lg sm:rounded-2xl transition-all duration-200 ease-out group-hover:scale-100">
           <div className="flex size-16 sm:size-28 items-center justify-center rounded-full bg-primary/10 backdrop-blur-md">
