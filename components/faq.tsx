@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+// import { accordionData } from "./data";
 
 export default function FAQSection() {
   const accordionData = [

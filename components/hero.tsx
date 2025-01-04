@@ -16,7 +16,7 @@ export default function Hero() {
             linear-gradient(rgba(209, 213, 219, 0.2) 1px, transparent 2px),
             linear-gradient(90deg, rgba(209, 213, 219, 0.2) 1px, transparent 2px)
           `,
-          backgroundSize: "50px 50px",
+          backgroundSize: "100px 100px",
           backgroundPosition: "center center",
         }}
       />
@@ -64,7 +64,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center pb-8 sm:pb-12  md:pb-16 lg:pb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center pb-8 sm:pb-12  md:pb-16 lg:pb-20 bg-white/20 backdrop-blur-md">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
           Revolutionize Your Hiring Process with{" "}
           <span className="inline-flex items-center">
