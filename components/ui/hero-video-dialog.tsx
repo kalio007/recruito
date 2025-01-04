@@ -92,7 +92,7 @@ export default function HeroVideoDialog({
             src={thumbnailSrc}
             alt={thumbnailAlt}
             fill
-            className="object-cover rounded-lg sm:rounded-2xl border transition-all duration-200 ease-out group-hover:brightness-[0.8]"
+            className="rounded-lg sm:rounded-2xl border transition-all duration-200 ease-out group-hover:brightness-[0.8]"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/80 pointer-events-none rounded-lg sm:rounded-2xl" />
