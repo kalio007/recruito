@@ -10,9 +10,15 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 py-6 sm:py-4">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0">
           {/* Logo and Copyright Section */}
-          <div className="flex flex-col md:flex-row items-center gap-4">
-            <div className="flex items-center">
-              <Image src={logo} alt="Recruito" width={150} height={150} />
+          <div className="flex flex-col md:flex-col space-y-0 md:space-y-4 items-center md:items-start gap-4">
+            <div className="flex">
+              <Image
+                src={logo}
+                alt="Recruito"
+                width={150}
+                height={150}
+                className=""
+              />
             </div>
             <div className="text-sm text-gray-600">
               © 2024 Recruito AI . All Rights Reserved.
@@ -20,7 +26,7 @@ const Footer = () => {
           </div>
 
           {/* Links and Social Section */}
-          <div className="flex flex-col items-center sm:items-end gap-4">
+          <div className="flex flex-col items-center md:items-end space-y-0 md:space-y-4  gap-4  ">
             {/* Social Media Links */}
             <div className="flex gap-6">
               <Link href="#" className="text-gray-600 hover:text-gray-900">
@@ -62,7 +68,7 @@ const Footer = () => {
             </div>
 
             {/* Terms and Privacy Links */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-center">
               <Link
                 href="#"
                 className="text-sm text-gray-600 hover:text-gray-900"

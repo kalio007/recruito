@@ -38,7 +38,7 @@ const CompanyLogo = ({ logo, name }: { logo: any; name: string }) => {
 export default function Partners() {
   return (
     <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-40 mt-2 sm:mt-4">
-      <div className="w-full py-6 sm:py-8 md:py-12">
+      <div className="w-full py-4 sm:py-6 md:py-12">
         <h2 className="text-center text-xs sm:text-sm font-medium mb-6 sm:mb-8 md:mb-12 text-gray-700">
           Trusted By The World Leading Organisations
         </h2>
