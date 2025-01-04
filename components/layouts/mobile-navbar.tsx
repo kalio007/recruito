@@ -21,7 +21,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({
         isOpen ? "block" : "hidden"
       } absolute top-full left-0 w-full bg-white rounded-lg shadow-md mt-2`}
     >
-      <ul className="flex flex-col gap-4 p-4">
+      <ul className="flex flex-col gap-4 p-2">
         {navItems.map((item) => (
           <li key={item.href}>
             <Link

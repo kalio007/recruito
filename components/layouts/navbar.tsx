@@ -20,7 +20,7 @@ export function Navbar() {
 
   return (
     <div className="fixed w-full px-4 pt-4 z-50">
-      <nav className="max-w-6xl mx-auto bg-white/80 backdrop-blur-md rounded-full px-2 py-2 shadow-lg">
+      <nav className="max-w-6xl mx-auto bg-white/80 backdrop-blur-md rounded-full px-2 md:py-2 shadow-lg">
         <div className="flex items-center justify-between px-2 py-2">
           {/* Logo */}
           <div className="flex items-center gap-2">

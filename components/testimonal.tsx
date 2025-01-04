@@ -36,6 +36,14 @@ const testimonials = [
     content:
       "Recruito has transformed our hiring process! We save countless hours each week The quality of candidates has significantly improved since we started using Recruito",
   },
+  {
+    id: 4,
+    image: Rivera,
+    name: "Alex Martin",
+    role: "Company, HR",
+    content:
+      "Recruito has transformed our hiring process! We save countless hours each week The quality of candidates has significantly improved since we started using Recruito",
+  },
 ];
 
 const TestimonialsSection = () => {
@@ -50,7 +58,7 @@ const TestimonialsSection = () => {
   }, [api]);
 
   return (
-    <section className="py-8 md:py-16 bg-white overflow-hidden mb-6 md:mb-10">
+    <section className="py-8 md:py-16 bg-white overflow-hidden mb-6 md:mb-10 md:mx-40">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
           <div className="inline-block px-3 py-1 md:px-4 md:py-1.5 mb-6 md:mb-12 rounded-full border border-gray-300 text-xs md:text-sm font-medium text-[#004CD3]">
