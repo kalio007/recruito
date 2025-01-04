@@ -43,7 +43,7 @@ export default function FinalShortlistSection() {
             className="w-32 sm:w-48 md:w-auto"
           />
         </div>
-        <div className="space-y-3 sm:space-y-4 max-w-md mx-auto w-full px-4 sm:px-6">
+        <div className="space-y-6  md:space-y-10 max-w-md md:w-full mx-auto w-full px-4 sm:px-6">
           {candidates.map((candidate, index) => (
             <CandidateListItem
               key={candidate.name}
@@ -71,30 +71,34 @@ const CandidateListItem = ({
 }: CandidateListItemProps) => (
   <div
     className={cn(
-      "flex justify-center bg-white sm:gap-3 gap-2 w-full transition-transform duration-300 ease-in-out cursor-pointer h-fit my-2 max-h-[424px]",
+      "flex justify-center bg-white sm:gap-3 gap-10 w-full transition-transform duration-300 ease-in-out cursor-pointer h-full my-2 max-h-[424px] md:max-h-[500px]",
       index === 0 && "-rotate-[2deg]",
       index === 1 && "rotate-[1deg]",
       index === 2 && "rotate-[2deg]"
     )}
   >
-    <Image
-      src={image}
-      alt={candidate.name}
-      width={40}
-      height={40}
-      className="rounded-full w-8 h-8 sm:w-10 sm:h-10"
-    />
-    <div className="w-full rounded-2xl shadow-xl p-2 sm:p-4 flex items-center justify-between relative transform transition-all hover:rotate-0 hover:-translate-y-1">
-      <span className="text-gray-600 text-sm sm:text-lg">{candidate.name}</span>
-      <div className="flex items-center gap-2 sm:gap-4">
-        <span className="text-gray-500 text-sm sm:text-base">
-          {candidate.rank}
+    <div className="w-full space-x-2 h-full flex items-center  relative transform transition-all hover:rotate-0 hover:-translate-y-1">
+      <Image
+        src={image}
+        alt={candidate.name}
+        width={40}
+        height={40}
+        className="rounded-full w-8 h-8 sm:w-10 sm:h-10"
+      />
+      <div className="flex w-full border border-[#848EA0]/20 items-center justify-between h-10 sm:h-12 md:h-16 rounded-xl shadow-2xl p-2 sm:p-4  relative transform transition-all hover:rotate-0 hover:-translate-y-1 hover:bg-white">
+        <span className="text-gray-600 text-sm sm:text-lg">
+          {candidate.name}
         </span>
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-100 flex items-center justify-center">
-            <span className="text-xs sm:text-sm text-green-600">
-              {candidate.score}
-            </span>
+        <div className="flex items-center gap-2 sm:gap-4">
+          <span className="text-gray-500 text-sm sm:text-base">
+            {candidate.rank}
+          </span>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-100 flex items-center justify-center">
+              <span className="text-xs sm:text-sm text-green-600">
+                {candidate.score}
+              </span>
+            </div>
           </div>
         </div>
       </div>

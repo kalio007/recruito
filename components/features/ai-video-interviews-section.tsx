@@ -8,7 +8,7 @@ import interview_overlay from "@/assets/interview_overlay.png";
 
 export default function AIVideoInterviewsSection() {
   return (
-    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
+    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center ">
       <div className="hidden sm:block absolute top-0 left-0">
         <Image
           src={Grid}
@@ -20,17 +20,20 @@ export default function AIVideoInterviewsSection() {
       </div>
 
       <div className="order-2 md:order-1 h-[300px] sm:h-[400px] flex items-center justify-center relative border-[#848EA0]/20 border rounded-2xl">
-        <Image
-          src={image}
-          alt="Video Interview"
-          width={450}
-          height={450}
-          className="object-contain scale-75 sm:scale-100 border rounded-2xl [filter:drop-shadow(-4px_2px_10px_rgba(0,0,0,0.1))_drop-shadow(-16px_9px_18px_rgba(0,0,0,0.09))]"
-        />
+        <div className="rounded-xl relative max-w-[460px]">
+          <Image
+            src={image}
+            width={400}
+            height={400}
+            alt="Video Interview"
+            className=" object-contain scale-75 sm:scale-100 border rounded-2xl [filter:drop-shadow(-4px_2px_10px_rgba(0,0,0,0.1))_drop-shadow(-16px_9px_18px_rgba(0,0,0,0.09))] max-w-full max-h-full"
+          />
+        </div>
+
         <Image
           src={interview_overlay}
           alt="Customer"
-          className="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 z-10 w-24 sm:w-32 md:w-40"
+          className="absolute  right-0 sm:right-5 top-1/2 -translate-y-1/2 md:translate-x-[20px] z-10 w-16 sm:w-32 md:w-40"
         />
       </div>
 
